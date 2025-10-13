@@ -41,7 +41,7 @@ body {
 }
 
 /* What happens on mouse hover */
-#calendar-controls button:hover {
+#calendar-controls button:active {
   background: #ffffff;
   color: #0017e7;
 }
