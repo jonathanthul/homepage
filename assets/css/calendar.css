@@ -1,0 +1,159 @@
+body {
+    font-family: Fredoka;
+    font-weight: 400;
+    color: #ffffff;
+    background-color: #0017e7;
+    /* '#fff490' */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Control the box that the buttons are children of/in */
+#calendar-controls {
+  display: flex; /*Makes it a flex box which affects its children */
+  align-items: center; /*in a flex environemnt, aligns the items on the cross axis, which I take to be the horizontal axis here */
+  justify-content: center; /*Controls the alignment on the main axis*/
+  gap: 1rem; /* Sets the gap between rows and columns in various environments (flex among them) */
+  margin-bottom: 1vh;
+}
+
+/* Hide calendar controls on big screens */
+@media screen and (min-width: 900px) {
+  #calendar-controls {
+    display: none;
+  }
+}
+
+/* Controls button styling */
+#calendar-controls button {
+  background: #0017e7;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem; /* 1 rem is the font size of the root element, I guess here that's the <body>? 1 em is the font size of the own element (?) */
+  transition: background 0.2s, color 0.2s; /* Controls settings for transitions between states of an element, e.g. the unhovered and hover-state (see below) */
+}
+
+/* What happens on mouse hover */
+#calendar-controls button:hover {
+  background: #ffffff;
+  color: #0017e7;
+}
+
+#calendar {
+    width: 80vw;
+    height: 70vh;
+    max-width: 1200px;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+}
+
+/* Hide calendar controls on big screens */
+@media (max-width: 900px) {
+  #calendar {
+    width: 90vw;
+    height: 85vh;
+    padding-top: 5vh;
+    padding-bottom: 10vh;
+  }
+}
+
+/* overrides the min-height of 600px for tui calendar */
+.tui-full-calendar-month {
+    min-height: auto;
+}
+
+/* Change the event headlines in the calendar */
+.tui-full-calendar-weekday-schedule-title {
+    color: #ffffff !important;
+    font-weight: 400;
+}
+
+/* --- MAIN POPUP CONTAINER --- */
+.tui-full-calendar-popup-detail {
+    background-color: #0017e7 !important; /* your site background */
+    color: #ffffff !important;
+    border: 1px solid #ffffff !important;
+}
+
+/* --- TOP STRIPE / TITLE AREA --- */
+.tui-full-calendar-popup-detail .tui-full-calendar-popup-container {
+    background-color: #0017e7 !important;
+}
+
+/* --- HEADER TITLE + STRIPE (the one with green line by default) --- */
+.tui-full-calendar-popup-detail .tui-full-calendar-popup-title,
+.tui-full-calendar-popup-detail .tui-full-calendar-schedule-title,
+.tui-full-calendar-popup-detail .tui-full-calendar-popup-top-line,
+.tui-full-calendar-popup-detail .tui-full-calendar-section-header {
+    background-color: #0017e7 !important;
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+}
+
+/* --- DATE/TIME SECTION --- */
+.tui-full-calendar-popup-detail .tui-full-calendar-section-item,
+.tui-full-calendar-popup-detail .tui-full-calendar-section-detail {
+    background-color: #0017e7 !important;
+    color: #ffffff !important;
+}
+
+/* --- DESCRIPTION / BODY AREA --- */
+.tui-full-calendar-popup-detail .tui-full-calendar-content,
+.tui-full-calendar-popup-detail .tui-full-calendar-section,
+.tui-full-calendar-popup-detail .tui-full-calendar-section-content {
+    background-color: #0017e7 !important;
+    color: #ffffff !important;
+}
+
+/* --- FOOTER / CLOSE BUTTON --- */
+.tui-full-calendar-popup-detail .tui-full-calendar-popup-button {
+    background-color: #0017e7 !important;
+    color: #ffffff !important;
+    border: 1px solid #ffffff !important;
+}
+
+/* --- Remove the green stripe border at the very top if it persists --- */
+.tui-full-calendar-popup-detail .tui-full-calendar-popup-top {
+    background-color: #0017e7 !important;
+    border-top: none !important;
+}
+
+/* More view popup: overall text */
+.tui-full-calendar-month-more-title,
+.tui-full-calendar-month-more-title-date,
+.tui-full-calendar-month-more,
+.tui-full-calendar-month-more-schedule {
+    color: #ffffff !important;
+}
+
+/* Optional: make the popup background match your site theme */
+.tui-full-calendar-month-more,
+.tui-full-calendar-month-more-container {
+    background-color: #0017e7 !important;
+    color: #ffffff !important;
+}
+
+/* Controls the time bar to the left side of the day view */
+.tui-full-calendar-timegrid-timezone,
+.tui-full-calendar-timegrid-hour {
+  background-color: #0017e7 !important;
+  color: #ffffff !important;
+}
+
+/* Put a full border around day/week view event blocks */
+.tui-full-calendar-time-schedule {
+  border: 2px solid #ffffff !important; /* your border color */
+  box-sizing: border-box;
+}
+
+/* Control the font weight in the day view event titles */
+.tui-full-calendar-time-schedule-content {
+    font-weight: 500;
+}

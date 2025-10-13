@@ -1,0 +1,11 @@
+# Ignore my test folder
+private_test_folder/
+
+# Ignore Python cache and virtual environments
+__pycache__/
+*.pyc
+venv/
+
+# Ignore system files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,171 @@
+/* ---- Base styling --- */
+body {
+  font-family: "Cactus Classical Serif", serif;
+  font-size: 16px;
+  background-color: #fceeda; /* default light mode */
+  color: #272727;
+}
+
+/* --- Dark mode --- */
+body.dark {
+  background-color: #272727;
+  color: #fceeda;
+}
+
+/* --- Links --- */
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+body.dark a {
+  color: #66aaff;
+  text-decoration: none;
+}
+
+body.dark a:hover {
+  text-decoration: underline;
+}
+
+/* --- Auxiliary classes to temporarily add smooth transitions for theme button toggle --- */
+body.enable-transitions {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* enable link color transitions only when toggling */
+body.enable-transitions a {
+  transition: color 0.3s ease;
+}
+
+
+.screen-centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+/* --- Layout --- */
+/* ---Rows & Columns for photos and recipes --- */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Abstand zwischen den Spalten */
+  justify-content: center;
+  margin: 10px;
+}
+
+.column {
+  max-width: 48%; /* Etwas kleiner als 50%, damit Platz zwischen den Spalten bleibt */
+  box-sizing: border-box;
+  padding: 10px;
+  flex: 0 0 48%; /* Make columns equally wide */
+}
+
+.column img {
+  width: 100%;
+  height: auto;
+}
+
+/* Mobile Ansicht */
+@media (max-width: 900px) { 
+  .column {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .screen-centered {
+    width: 85%;
+  }
+}
+
+/* --- Figures --- */
+figure {
+  margin: 0 0 20px;
+  text-align: left;
+}
+
+figcaption {
+  font-family: "Cactus Classical Serif";
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+/* --- Table-List Class for responsive projects site --- */
+.table-list {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+.table-list td {
+  padding: 16px;
+  vertical-align: top;
+}
+
+@media (max-width: 900px) { 
+  /* stack each row vertically */
+  .table-list tr {
+    display: block;
+  }
+
+  /* each cell becomes a full-width block so the name/link sits above the description */
+  .table-list td {
+    display: block;
+  }
+}
+
+/* makes the project links more visually distinct */
+.table-list td:first-child a {
+  font-weight: 700;
+}
+
+/* --- Canvas Styles for JavaScript Canvas --- */
+#bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2; /* put it behind everything */
+}
+#fg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* put it behind everything but the background*/
+}
+
+/* --- Theme Switch Button --- */
+button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 50%; /* put its left edge in the horizontal center */
+  transform: translateX(50%); /* shift it back by half its width */
+  color: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+}
+
+#theme-toggle svg {
+  width: 100%;
+  height: 100%;
+}
