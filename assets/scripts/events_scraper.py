@@ -4,6 +4,7 @@ import datetime
 from dateutil.relativedelta import relativedelta #type: ignore
 import json
 import html
+import os
 
 TODAY = datetime.datetime.now()
 
@@ -88,6 +89,8 @@ def flex_scraper():
 venster99_events = venster99_scraper()
 flex_events = flex_scraper()
 
-with open("data/events.json", "w", encoding="utf-8") as file:
+path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data", "events.json"))
+
+with open(path, "w", encoding="utf-8") as file:
     json.dump(venster99_events + flex_events, file) #type: ignore
     print("Wrote events to data/events.json")
