@@ -58,9 +58,9 @@ body {
 @media (max-width: 900px) {
   #calendar {
     width: 90vw;
-    height: 80vh; 
+    height: 75vh; 
     min-height: 600px;
-    padding-top: 5vh;
+    padding-top: 0vh;
     padding-bottom: 3vh;
   }
 }
