@@ -2,43 +2,18 @@
 body {
   font-family: "Cactus Classical Serif", serif;
   font-size: 16px;
-  background-color: #fceeda; /* default light mode */
-  color: #272727;
-}
-
-/* --- Dark mode --- */
-body.dark {
   background-color: #272727;
   color: #fceeda;
 }
 
 /* --- Links --- */
 a {
-  color: #0066cc;
+  color: #66aaff;
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
-}
-
-body.dark a {
-  color: #66aaff;
-  text-decoration: none;
-}
-
-body.dark a:hover {
-  text-decoration: underline;
-}
-
-/* --- Auxiliary classes to temporarily add smooth transitions for theme button toggle --- */
-body.enable-transitions {
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* enable link color transitions only when toggling */
-body.enable-transitions a {
-  transition: color 0.3s ease;
 }
 
 
@@ -48,8 +23,6 @@ body.enable-transitions a {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-
 
 /* --- Layout --- */
 /* ---Rows & Columns for photos and recipes --- */

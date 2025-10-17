@@ -39,11 +39,12 @@ document.addEventListener('DOMContentLoaded', () => {
             'common.dayname.color':textColor,
             'common.holiday.color': textColor,
             'common.saturday.color': textColor,
-            'common.today.backgroundColor': '#0017e7',
+            'common.today.backgroundColor': siteBgColor,
+            'common.today.color': textColor,
             'common.border': '1px solid #ffffff', // You can set this to 'none' or a very light color
             'month.dayname.borderLeft': 'none',
             'month.dayname.borderRight': 'none',
-            'month.moreView.backgroundColor': '#0017e7', 
+            'month.moreView.backgroundColor': siteBgColor, 
         },
         gridSelection: {
             enableDblClick: false,
