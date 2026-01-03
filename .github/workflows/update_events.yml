@@ -5,6 +5,9 @@ on:
     - cron: '0 5 * * *'   # every day at 05:00 UTC
   workflow_dispatch:       # allows manual run
 
+permissions:
+  contents: write
+
 jobs:
   update:
     runs-on: ubuntu-latest
@@ -31,4 +34,4 @@ jobs:
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
           git add assets/data/events.json
-          git diff --quiet && echo "No changes to commit" || (git commit -m "Auto-update events.json" && git push)
+          git diff --cached --quiet && echo "No changes to commit" || (git commit -m "Auto-update events.json" && git push)
